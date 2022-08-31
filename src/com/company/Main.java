@@ -8,12 +8,11 @@ public class Main {
 	// write your code here
         int[] arr = {2, 8, 5, 3, 9, 4, 1};
         int len = 7;
-        bubbleSort(arr);
+        bubSort(arr);
         System.out.println(Arrays.toString(arr));
     }
 
     public static void bubbleSort(int[] arr, int len) {
-
         for (int i = 0; i < len -1; i++) {
             for (int j = 0; j < len - i - 1; j++) {
                 if (arr[j] > arr[j+1]) {
@@ -42,6 +41,26 @@ public class Main {
             if (swapped = false) {
                 break;
             }
+        }
+    }
+
+    public static void bubSort(int[] arr) {
+        boolean swapped;
+        for (int i = 0; i < arr.length - 1; i++) {
+            swapped = false;
+            for (int j = 0; j < arr.length -1 - i; j++) {
+                if (arr[j] < arr[j+1]) {
+                    int temp = arr[j];
+                    arr[j] = arr[j+1];
+                    arr[j+1] = temp;
+                    swapped = true;
+                }
+            }
+
+            if (swapped == false) {
+                break;
+            }
+
         }
     }
 }
